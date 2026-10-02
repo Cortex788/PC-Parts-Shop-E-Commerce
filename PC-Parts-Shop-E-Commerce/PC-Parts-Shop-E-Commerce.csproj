@@ -7,4 +7,8 @@
     <RootNamespace>PC_Parts_Shop_E_Commerce</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Data\Enums\" />
+  </ItemGroup>
+
 </Project>
