@@ -14,6 +14,6 @@ namespace PC_Parts_Shop_E_Commerce.Data.Models
         [MaxLength(CategoryNameMaxLength)]
         public string Name { get; set; } = null!;
 
-        public virtual ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product>? Products { get; set; }
     }
 }
