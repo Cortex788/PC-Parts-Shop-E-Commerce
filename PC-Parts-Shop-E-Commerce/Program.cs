@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace PC_Parts_Shop_E_Commerce
 {
     public class Program
@@ -6,8 +8,15 @@ namespace PC_Parts_Shop_E_Commerce
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            string connectionString = builder.Configuration.GetConnectionString("SqlServer") ?? throw new InvalidOperationException("ConnectionString not found!");
+
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddDbContext<Data.ApplicationDbContext>(options =>
+            {
+                options.UseSqlServer(connectionString);
+            });
 
             var app = builder.Build();
 

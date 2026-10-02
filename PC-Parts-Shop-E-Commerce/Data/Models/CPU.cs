@@ -32,7 +32,6 @@ namespace PC_Parts_Shop_E_Commerce.Data.Models
         [Required]
         public string SocketType { get; set; } = null!;
 
-
         public virtual Product? Product { get; set; }
     }
 }
