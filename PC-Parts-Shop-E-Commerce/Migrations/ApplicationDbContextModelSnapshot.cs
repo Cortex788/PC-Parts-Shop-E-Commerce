@@ -37,6 +37,28 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Brands");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Intel"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "AMD"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "NVIDIA"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Corsair"
+                        });
                 });
 
             modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.CPU", b =>
@@ -71,6 +93,29 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("CPUs");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 1,
+                            BaseClock = 3000,
+                            BoostClock = 5300,
+                            Cores = 24,
+                            IntegratedGraphics = "Intel UHD Graphics 770",
+                            Name = "Core i9-13900K",
+                            SocketType = "LGA1700",
+                            Threads = 32
+                        },
+                        new
+                        {
+                            ProductId = 2,
+                            BaseClock = 4500,
+                            BoostClock = 5100,
+                            Cores = 16,
+                            Name = "Ryzen 9 7950X",
+                            SocketType = "AM5",
+                            Threads = 32
+                        });
                 });
 
             modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.Category", b =>
@@ -89,6 +134,23 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "CPU"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "GPU"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "RAM"
+                        });
                 });
 
             modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.GPU", b =>
@@ -121,6 +183,28 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("GPUs");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 3,
+                            Chipset = "GeForce RTX 4090",
+                            Cores = 16384,
+                            Length = "336mm",
+                            MemoryClock = 21000,
+                            MemoryType = "GDDR6X",
+                            VRAM = 24
+                        },
+                        new
+                        {
+                            ProductId = 5,
+                            Chipset = "Radeon RX 7900 XTX",
+                            Cores = 6144,
+                            Length = "324mm",
+                            MemoryClock = 20000,
+                            MemoryType = "GDDR6",
+                            VRAM = 24
+                        });
                 });
 
             modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.Product", b =>
@@ -164,6 +248,63 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            BrandId = 1,
+                            CategoryId = 1,
+                            Description = "High-end desktop CPU from Intel for enthusiast gaming and content creation.",
+                            ImageURL = "/images/products/i9-13900k.jpg",
+                            Price = 589.99m,
+                            ProductName = "Intel Core i9-13900K",
+                            StockQuantity = 10
+                        },
+                        new
+                        {
+                            Id = 2,
+                            BrandId = 2,
+                            CategoryId = 1,
+                            Description = "High-performance CPU from AMD suitable for multitasking and heavy workloads.",
+                            ImageURL = "/images/products/ryzen9-7950x.jpg",
+                            Price = 699.99m,
+                            ProductName = "AMD Ryzen 9 7950X",
+                            StockQuantity = 8
+                        },
+                        new
+                        {
+                            Id = 3,
+                            BrandId = 3,
+                            CategoryId = 2,
+                            Description = "Flagship GPU delivering top-tier gaming and compute performance.",
+                            ImageURL = "/images/products/rtx4090.jpg",
+                            Price = 1599.99m,
+                            ProductName = "NVIDIA GeForce RTX 4090",
+                            StockQuantity = 5
+                        },
+                        new
+                        {
+                            Id = 4,
+                            BrandId = 4,
+                            CategoryId = 3,
+                            Description = "Reliable DDR4 memory kit designed for performance and compatibility.",
+                            ImageURL = "/images/products/corsair-vengeance-32gb.jpg",
+                            Price = 89.99m,
+                            ProductName = "Corsair Vengeance LPX 32GB",
+                            StockQuantity = 25
+                        },
+                        new
+                        {
+                            Id = 5,
+                            BrandId = 2,
+                            CategoryId = 2,
+                            Description = "High-end GPU from AMD for 4K gaming and creative workloads.",
+                            ImageURL = "/images/products/rx7900xtx.jpg",
+                            Price = 999.99m,
+                            ProductName = "AMD Radeon RX 7900 XTX",
+                            StockQuantity = 6
+                        });
                 });
 
             modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.RAM", b =>
@@ -184,6 +325,15 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                     b.HasKey("ProductId");
 
                     b.ToTable("RAMs");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 4,
+                            Capacity = 32,
+                            MemorySpeed = 3200,
+                            MemoryType = "DDR4"
+                        });
                 });
 
             modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.CPU", b =>
