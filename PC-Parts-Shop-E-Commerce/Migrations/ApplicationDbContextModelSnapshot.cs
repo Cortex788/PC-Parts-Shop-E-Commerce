@@ -58,6 +58,31 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                         {
                             Id = 4,
                             Name = "Corsair"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "ASUS"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "MSI"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "Gigabyte"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "EVGA"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "Sapphire"
                         });
                 });
 
