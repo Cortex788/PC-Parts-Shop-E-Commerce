@@ -1,0 +1,36 @@
+@using PC_Parts_Shop_E_Commerce.ModelsViews;
+@model CpuCardViewModel
+
+<div class="card">
+    @if (!string.IsNullOrEmpty(Model.ImageURL))
+    {
+        <img src="@Model.ImageURL" class="card-img-top object-fit-cover p-5" alt="Product image" style="height: 300px" />
+    }
+
+    <div class="card-body">
+        <h5>@Model.Name</h5>
+        <p>@Model.Brand</p>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Cores:</strong> @Model.Cores</li>
+            <li class="list-group-item"><strong>Threads:</strong> @Model.Threads</li>
+            <li class="list-group-item"><strong>Base Clock:</strong> @Model.BaseClock MHz</li>
+            <li class="list-group-item"><strong>Boost Clock:</strong> @Model.BoostClock MHz</li>
+            <li class="list-group-item"><strong>Socket:</strong> @Model.SocketType</li>
+            @if (!string.IsNullOrEmpty(Model.IntegratedGraphics))
+            {
+                <li class="list-group-item"><strong>Integrated Graphics:</strong> @Model.IntegratedGraphics</li>
+            }
+            else
+            {
+                <li class="list-group-item"><strong>Integrated Graphics:</strong> Dedicated Graphics Required</li>
+            }
+        </ul>
+        <hr />
+        <h5>@Model.Price €</h5>
+        <span class="badge rounded-pill align-self-baseline @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
+            @(Model.StockQuantity > 0 ? "Available" : "Out of stock")
+        </span>
+
+    </div>
+</div>

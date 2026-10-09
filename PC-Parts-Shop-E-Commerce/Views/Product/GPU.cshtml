@@ -1,0 +1,11 @@
+﻿@using PC_Parts_Shop_E_Commerce.ModelsViews;
+@model IEnumerable<GpuCardViewModel>
+
+<div class="row g-3">
+    @foreach (var gpu in Model)
+    {
+        <div class="col col-md-4">
+            <partial name="_GpuCardPartial" model="gpu" />
+        </div>
+    }
+</div>
