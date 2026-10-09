@@ -29,7 +29,7 @@ namespace PC_Parts_Shop_E_Commerce.Data.Models
         public int StockQuantity { get; set; }
 
         public int BrandId { get; set; }
-        public Brand Brand { get; set; }
+        public Brand? Brand { get; set; }
 
         public int CategoryId { get; set; }
 

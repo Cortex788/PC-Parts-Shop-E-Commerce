@@ -1,0 +1,27 @@
+﻿@using PC_Parts_Shop_E_Commerce.ModelsViews;
+@model GpuCardViewModel
+
+<div class="card">
+    @if (!string.IsNullOrEmpty(Model.ImageURL))
+    {
+        <img src="@Model.ImageURL" class="card-img-top object-fit-cover p-5" alt="Product image" style="height: 300px" />
+    }
+
+    <div class="card-body">
+        <h5>@Model.Name</h5>
+        <p>@Model.Brand</p>
+
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><strong>Chipset:</strong> @Model.Chipset</li>
+            <li class="list-group-item"><strong>VRAM:</strong> @Model.VRAM GB</li>
+            <li class="list-group-item"> <strong>Memory:</strong> @Model.MemoryType</li>
+            <li class="list-group-item"> <strong>Memory Clock:</strong> @Model.MemoryClock MHz</li>
+        </ul>
+        <hr />
+        <h5>@Model.Price €</h5>
+        <span class="badge rounded-pill align-self-baseline @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
+            @(Model.StockQuantity > 0 ? "Available" : "Out of stock")
+        </span>
+
+    </div>
+</div>

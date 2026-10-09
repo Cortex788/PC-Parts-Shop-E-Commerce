@@ -1,0 +1,22 @@
+﻿@using PC_Parts_Shop_E_Commerce.Data.Models;
+@model Product
+@{
+    ViewData["Title"] = "GPUs";
+}
+
+<h1>GPUs</h1>
+
+@if (Model != null && Model.CategoryId == 2)
+{
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">@Model.ProductName</h5>
+            <p class="card-text">@Model.Description</p>
+            <p class="card-text">Price: $@Model.Price.ToString("F2")</p>
+        </div>
+    </div>
+}
+else
+{
+    <p>No GPU available.</p>
+}
