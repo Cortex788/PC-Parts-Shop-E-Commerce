@@ -1,27 +1,41 @@
 ﻿@using PC_Parts_Shop_E_Commerce.ModelsViews;
 @model GpuCardViewModel
 
-<div class="card">
+<div class="card product-card h-100">
     @if (!string.IsNullOrEmpty(Model.ImageURL))
     {
-        <img src="@Model.ImageURL" class="card-img-top object-fit-cover p-5" alt="Product image" style="height: 300px" />
+        <div class="product-image-container">
+            <img src="@Model.ImageURL"
+                 class="card-img-top product-image p-3"
+                 alt="@Model.Name" />
+        </div>
     }
 
-    <div class="card-body">
-        <h5>@Model.Name</h5>
-        <p>@Model.Brand</p>
+    <div class="card-body d-flex flex-column">
+        <h6 class="card-title">@Model.Name</h6>
+        <p class="text-muted mb-2">@Model.Brand</p>
 
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Chipset:</strong> @Model.Chipset</li>
-            <li class="list-group-item"><strong>VRAM:</strong> @Model.VRAM GB</li>
-            <li class="list-group-item"> <strong>Memory:</strong> @Model.MemoryType</li>
-            <li class="list-group-item"> <strong>Memory Clock:</strong> @Model.MemoryClock MHz</li>
+            <li class="list-group-item">
+                <strong>Chipset:</strong> @Model.Chipset
+            </li>
+            <li class="list-group-item">
+                <strong>VRAM:</strong> @Model.VRAM GB
+            </li>
+            <li class="list-group-item">
+                <strong>Memory:</strong> @Model.MemoryType
+            </li>
+            <li class="list-group-item">
+                <strong>Memory Clock:</strong> @Model.MemoryClock MHz
+            </li>
         </ul>
-        <hr />
-        <h5>@Model.Price €</h5>
-        <span class="badge rounded-pill align-self-baseline @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
-            @(Model.StockQuantity > 0 ? "Available" : "Out of stock")
-        </span>
 
+        <div class="mt-auto pt-3">
+            <h5>@Model.Price €</h5>
+
+            <span class="badge rounded-pill @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
+                @(Model.StockQuantity > 0 ? "Available" : "Out of stock")
+            </span>
+        </div>
     </div>
 </div>

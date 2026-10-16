@@ -1,36 +1,50 @@
 @using PC_Parts_Shop_E_Commerce.ModelsViews;
 @model CpuCardViewModel
 
-<div class="card">
+<div class="card product-card h-100">
     @if (!string.IsNullOrEmpty(Model.ImageURL))
     {
-        <img src="@Model.ImageURL" class="card-img-top object-fit-cover p-5" alt="Product image" style="height: 300px" />
+        <div class="product-image-container">
+            <img src="@Model.ImageURL"
+                 class="card-img-top product-image p-3"
+                 alt="@Model.Name" />
+        </div>
     }
 
-    <div class="card-body">
-        <h5>@Model.Name</h5>
-        <p>@Model.Brand</p>
+    <div class="card-body d-flex flex-column">
+        <h6 class="card-title">@Model.Name</h6>
+        <p class="text-muted mb-2">@Model.Brand</p>
 
         <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Cores:</strong> @Model.Cores</li>
-            <li class="list-group-item"><strong>Threads:</strong> @Model.Threads</li>
-            <li class="list-group-item"><strong>Base Clock:</strong> @Model.BaseClock MHz</li>
-            <li class="list-group-item"><strong>Boost Clock:</strong> @Model.BoostClock MHz</li>
-            <li class="list-group-item"><strong>Socket:</strong> @Model.SocketType</li>
-            @if (!string.IsNullOrEmpty(Model.IntegratedGraphics))
-            {
-                <li class="list-group-item"><strong>Integrated Graphics:</strong> @Model.IntegratedGraphics</li>
-            }
-            else
-            {
-                <li class="list-group-item"><strong>Integrated Graphics:</strong> Dedicated Graphics Required</li>
-            }
+            <li class="list-group-item">
+                <strong>Cores:</strong> @Model.Cores
+            </li>
+            <li class="list-group-item">
+                <strong>Threads:</strong> @Model.Threads
+            </li>
+            <li class="list-group-item">
+                <strong>Base Clock:</strong> @Model.BaseClock MHz
+            </li>
+            <li class="list-group-item">
+                <strong>Boost Clock:</strong> @Model.BoostClock MHz
+            </li>
+            <li class="list-group-item">
+                <strong>Socket:</strong> @Model.SocketType
+            </li>
+            <li class="list-group-item">
+                <strong>Integrated Graphics:</strong>
+                @(string.IsNullOrEmpty(Model.IntegratedGraphics)
+                    ? "Dedicated Graphics Required"
+                    : Model.IntegratedGraphics)
+            </li>
         </ul>
-        <hr />
-        <h5>@Model.Price €</h5>
-        <span class="badge rounded-pill align-self-baseline @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
-            @(Model.StockQuantity > 0 ? "Available" : "Out of stock")
-        </span>
 
+        <div class="mt-auto pt-3">
+            <h5>@Model.Price €</h5>
+
+            <span class="badge rounded-pill @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
+                @(Model.StockQuantity > 0 ? "Available" : "Out of stock")
+            </span>
+        </div>
     </div>
 </div>
