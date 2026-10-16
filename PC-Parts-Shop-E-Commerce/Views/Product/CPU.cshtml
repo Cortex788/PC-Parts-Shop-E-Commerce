@@ -1,11 +1,24 @@
 ﻿@using PC_Parts_Shop_E_Commerce.ModelsViews;
 @model IEnumerable<CpuCardViewModel>
 
-<div class="row g-3">
-    @foreach (var cpu in Model)
-    {
-        <div class="col col-md-4">
-            <partial name="_CpuCardPartial" model="cpu" />
-        </div>
-    }
+<div class="container my-4">
+    <div class="row g-4">
+
+        <aside class="col-12 col-md-3 col-lg-2">
+            <partial name="_ProductFilterPartial" />
+        </aside>
+
+
+        <section class="col-12 col-md-9 col-lg-10">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+                @foreach (var cpu in Model)
+                {
+                    <div class="col">
+                        <partial name="_CpuCardPartial" model="cpu" />
+                    </div>
+                }
+            </div>
+        </section>
+
+    </div>
 </div>

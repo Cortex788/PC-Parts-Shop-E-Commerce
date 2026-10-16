@@ -64,6 +64,63 @@ namespace PC_Parts_Shop_E_Commerce.Data.Configurations
                     CategoryId = 2,
                     ImageURL = "/images/products/rx7900xtx.jpg"
                 }
+                ,
+                new Product
+                {
+                    Id = 6,
+                    ProductName = "ASUS ROG Strix Z790-E Gaming",
+                    Description = "High-end Z790 motherboard from ASUS with robust power delivery and features for gaming and content creation.",
+                    Price = 449.99m,
+                    StockQuantity = 12,
+                    BrandId = 5,
+                    CategoryId = 4,
+                    ImageURL = "/images/products/asus-rog-strix-z790-e.jpg"
+                }
+                ,
+                new Product
+                {
+                    Id = 7,
+                    ProductName = "MSI MPG Z790 Carbon WiFi",
+                    Description = "MSI Z790 motherboard with advanced cooling and built-in WiFi for high-end Intel builds.",
+                    Price = 379.99m,
+                    StockQuantity = 7,
+                    BrandId = 6,
+                    CategoryId = 4,
+                    ImageURL = "/images/products/msi-mpg-z790-carbon.jpg"
+                },
+                new Product
+                {
+                    Id = 8,
+                    ProductName = "Gigabyte X670E AORUS Master",
+                    Description = "Gigabyte X670E flagship motherboard for AMD AM5 with premium power design and connectivity.",
+                    Price = 499.99m,
+                    StockQuantity = 5,
+                    BrandId = 7,
+                    CategoryId = 4,
+                    ImageURL = "/images/products/gigabyte-x670e-aorus-master.jpg"
+                },
+                new Product
+                {
+                    Id = 9,
+                    ProductName = "ASUS TUF Gaming B650-PLUS",
+                    Description = "ASUS TUF B650 motherboard offering durability and value for AM5 builds.",
+                    Price = 189.99m,
+                    StockQuantity = 14,
+                    BrandId = 5,
+                    CategoryId = 4,
+                    ImageURL = "/images/products/asus-tuf-b650-plus.jpg"
+                },
+                new Product
+                {
+                    Id = 10,
+                    ProductName = "MSI MAG B650 Tomahawk",
+                    Description = "MSI B650 mid-range motherboard with strong VRM and features for gamers and creators.",
+                    Price = 219.99m,
+                    StockQuantity = 9,
+                    BrandId = 6,
+                    CategoryId = 4,
+                    ImageURL = "/images/products/msi-mag-b650-tomahawk.jpg"
+                }
             );
         }
     }

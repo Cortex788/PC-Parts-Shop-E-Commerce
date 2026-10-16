@@ -1,8 +1,34 @@
-﻿@{
+﻿@using PC_Parts_Shop_E_Commerce.ModelsViews;
+@model IEnumerable<ProductCardViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    
+    <section class="hero-banner">
+        <img src="~/images/pcshop-banner.png"
+             alt="PcShop - PC Components and Hardware"
+             class="hero-banner-image" />
+    </section>
+
+    <hr style="color: #0eaaed" />
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2>Featured Products</h2>
+        <a asp-controller="Product" asp-action="Index"
+           class="text-decoration-none">
+            View All →
+        </a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
+        @foreach (var product in Model)
+        {
+            <div class="col col-md-4">
+                <partial name="_ProductCardPartial" model="product" />
+            </div>
+        }
+    </div>
+
 </div>
