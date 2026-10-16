@@ -175,6 +175,11 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                         {
                             Id = 3,
                             Name = "RAM"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Motherboard"
                         });
                 });
 
@@ -229,6 +234,92 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                             MemoryClock = 20000,
                             MemoryType = "GDDR6",
                             VRAM = 24
+                        });
+                });
+
+            modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.Motherboard", b =>
+                {
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Chipset")
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("nvarchar(20)");
+
+                    b.Property<int>("FormFactor")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MemorySlots")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MemoryType")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<string>("Socket")
+                        .IsRequired()
+                        .HasMaxLength(15)
+                        .HasColumnType("nvarchar(15)");
+
+                    b.HasKey("ProductId");
+
+                    b.ToTable("Motherboards");
+
+                    b.HasData(
+                        new
+                        {
+                            ProductId = 6,
+                            Chipset = "Z790",
+                            FormFactor = 1,
+                            MemorySlots = 4,
+                            MemoryType = 5,
+                            Name = "ROG Strix Z790-E Gaming",
+                            Socket = "LGA1700"
+                        },
+                        new
+                        {
+                            ProductId = 7,
+                            Chipset = "Z790",
+                            FormFactor = 1,
+                            MemorySlots = 4,
+                            MemoryType = 5,
+                            Name = "MPG Z790 Carbon WiFi",
+                            Socket = "LGA1700"
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            Chipset = "X670E",
+                            FormFactor = 1,
+                            MemorySlots = 4,
+                            MemoryType = 5,
+                            Name = "X670E AORUS Master",
+                            Socket = "AM5"
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            Chipset = "B650",
+                            FormFactor = 1,
+                            MemorySlots = 4,
+                            MemoryType = 5,
+                            Name = "TUF Gaming B650-PLUS",
+                            Socket = "AM5"
+                        },
+                        new
+                        {
+                            ProductId = 10,
+                            Chipset = "B650",
+                            FormFactor = 1,
+                            MemorySlots = 4,
+                            MemoryType = 5,
+                            Name = "MAG B650 Tomahawk",
+                            Socket = "AM5"
                         });
                 });
 
@@ -329,6 +420,61 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                             Price = 999.99m,
                             ProductName = "AMD Radeon RX 7900 XTX",
                             StockQuantity = 6
+                        },
+                        new
+                        {
+                            Id = 6,
+                            BrandId = 5,
+                            CategoryId = 4,
+                            Description = "High-end Z790 motherboard from ASUS with robust power delivery and features for gaming and content creation.",
+                            ImageURL = "/images/products/asus-rog-strix-z790-e.jpg",
+                            Price = 449.99m,
+                            ProductName = "ASUS ROG Strix Z790-E Gaming",
+                            StockQuantity = 12
+                        },
+                        new
+                        {
+                            Id = 7,
+                            BrandId = 6,
+                            CategoryId = 4,
+                            Description = "MSI Z790 motherboard with advanced cooling and built-in WiFi for high-end Intel builds.",
+                            ImageURL = "/images/products/msi-mpg-z790-carbon.jpg",
+                            Price = 379.99m,
+                            ProductName = "MSI MPG Z790 Carbon WiFi",
+                            StockQuantity = 7
+                        },
+                        new
+                        {
+                            Id = 8,
+                            BrandId = 7,
+                            CategoryId = 4,
+                            Description = "Gigabyte X670E flagship motherboard for AMD AM5 with premium power design and connectivity.",
+                            ImageURL = "/images/products/gigabyte-x670e-aorus-master.jpg",
+                            Price = 499.99m,
+                            ProductName = "Gigabyte X670E AORUS Master",
+                            StockQuantity = 5
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BrandId = 5,
+                            CategoryId = 4,
+                            Description = "ASUS TUF B650 motherboard offering durability and value for AM5 builds.",
+                            ImageURL = "/images/products/asus-tuf-b650-plus.jpg",
+                            Price = 189.99m,
+                            ProductName = "ASUS TUF Gaming B650-PLUS",
+                            StockQuantity = 14
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BrandId = 6,
+                            CategoryId = 4,
+                            Description = "MSI B650 mid-range motherboard with strong VRM and features for gamers and creators.",
+                            ImageURL = "/images/products/msi-mag-b650-tomahawk.jpg",
+                            Price = 219.99m,
+                            ProductName = "MSI MAG B650 Tomahawk",
+                            StockQuantity = 9
                         });
                 });
 
@@ -373,6 +519,17 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                 });
 
             modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.GPU", b =>
+                {
+                    b.HasOne("PC_Parts_Shop_E_Commerce.Data.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("PC_Parts_Shop_E_Commerce.Data.Models.Motherboard", b =>
                 {
                     b.HasOne("PC_Parts_Shop_E_Commerce.Data.Models.Product", "Product")
                         .WithMany()
