@@ -40,6 +40,22 @@
 
         /* CPU end */
 
+        /* Motherboard start */
+
+        public const int MotherboardNameMinLength = 2;
+        public const int MotherboardNameMaxLength = 100;
+
+        public const int MotherboardChipsetMinLength = 2;
+        public const int MotherboardChipsetMaxLength = 20;
+
+        public const int MotherboardSocketMinLength = 2;
+        public const int MotherboardSocketMaxLength = 15;
+
+        public const int MotherboardMemorySlotsMinValue = 1;
+        public const int MotherboardMemorySlotsMaxValue = 8;
+
+        /* Motherboard end */
+
 
     }
 }

@@ -56,5 +56,45 @@ namespace PC_Parts_Shop_E_Commerce.Controllers
 
             return View(cpus);
         }
+
+        public IActionResult RAM()
+        {
+            var rams = dbContext.RAMs
+                .Select(ram => new RamCardViewModel
+                {
+                    Id = ram.ProductId,
+                    Name = ram.Product.ProductName,
+                    Brand = ram.Product.Brand.Name,
+                    Price = ram.Product.Price,
+                    StockQuantity = ram.Product.StockQuantity,
+                    ImageURL = ram.Product.ImageURL,
+                    Capacity = ram.Capacity,
+                    MemoryType = ram.MemoryType,
+                    MemorySpeed = ram.MemorySpeed
+                })
+                .ToList();
+            return View(rams);
+        }
+
+        public IActionResult Motherboard()
+        {
+            var motherboards = dbContext.Motherboards
+                .Select(mb => new MotherboardCardViewModel
+                {
+                    Id = mb.ProductId,
+                    Name = mb.Product.ProductName,
+                    Brand = mb.Product.Brand.Name,
+                    Price = mb.Product.Price,
+                    StockQuantity = mb.Product.StockQuantity,
+                    ImageURL = mb.Product.ImageURL,
+                    Chipset = mb.Chipset,
+                    FormFactor = mb.FormFactor,
+                    Socket = mb.Socket,
+                    MemoryType = mb.MemoryType,
+                    MemorySlots = mb.MemorySlots
+                })
+                .ToList();
+            return View(motherboards);
+        }
     }
 }
