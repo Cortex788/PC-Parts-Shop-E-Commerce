@@ -1,0 +1,68 @@
+﻿@using PC_Parts_Shop_E_Commerce.ViewModels
+@model AddEditRamViewModel
+
+<input type="hidden" asp-for="ProductId" />
+@Html.AntiForgeryToken()
+<div class="mb-3">
+    <label asp-for="ProductName" class="form-label"></label>
+    <input asp-for="ProductName" class="form-control" />
+    <span asp-validation-for="ProductName" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="BrandId" class="form-label">Brand</label>
+    <select asp-for="BrandId"
+            asp-items="Model.Brands"
+            class="form-select">
+        <option value="">-- Select Brand --</option>
+    </select>
+    <span asp-validation-for="BrandId" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Price" class="form-label"></label>
+    <input asp-for="Price" class="form-control" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="StockQuantity" class="form-label"></label>
+    <input asp-for="StockQuantity" class="form-control" />
+    <span asp-validation-for="StockQuantity" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="ImageURL" class="form-label">Image URL</label>
+    <input asp-for="ImageURL" class="form-control" />
+    <span asp-validation-for="ImageURL" class="text-danger"></span>
+</div>
+
+<hr />
+
+<h5>RAM Specifications</h5>
+
+<div class="mb-3">
+    <label asp-for="Capacity" class="form-label">Capacity (GB)</label>
+    <input asp-for="Capacity" class="form-control" />
+    <span asp-validation-for="Capacity" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="MemoryType" class="form-label">Memory Type</label>
+    <input asp-for="MemoryType" class="form-control" />
+    <span asp-validation-for="MemoryType" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="MemorySpeed" class="form-label">Memory Speed (MHz)</label>
+    <input asp-for="MemorySpeed" class="form-control" />
+    <span asp-validation-for="MemorySpeed" class="text-danger"></span>
+</div>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>

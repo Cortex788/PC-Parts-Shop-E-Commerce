@@ -15,23 +15,23 @@
         <h6 class="card-title">@Model.Name</h6>
         <p class="text-muted mb-2">@Model.Brand</p>
 
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+        <ul>
+            <li>
                 <strong>Cores:</strong> @Model.Cores
             </li>
-            <li class="list-group-item">
+            <li>
                 <strong>Threads:</strong> @Model.Threads
             </li>
-            <li class="list-group-item">
+            <li>
                 <strong>Base Clock:</strong> @Model.BaseClock MHz
             </li>
-            <li class="list-group-item">
+            <li>
                 <strong>Boost Clock:</strong> @Model.BoostClock MHz
             </li>
-            <li class="list-group-item">
+            <li>
                 <strong>Socket:</strong> @Model.SocketType
             </li>
-            <li class="list-group-item">
+            <li>
                 <strong>Integrated Graphics:</strong>
                 @(string.IsNullOrEmpty(Model.IntegratedGraphics)
                     ? "Dedicated Graphics Required"
@@ -45,6 +45,29 @@
             <span class="badge rounded-pill @(Model.StockQuantity > 0 ? "bg-success" : "bg-danger")">
                 @(Model.StockQuantity > 0 ? "Available" : "Out of stock")
             </span>
+
+            <div class="mt-3 d-flex gap-2">
+                <a asp-controller="CPU"
+                   asp-action="Details"
+                   asp-route-id="@Model.Id"
+                   class="btn btn-info btn-sm flex-fill">
+                    Details
+                </a>
+
+                <a asp-controller="CPU"
+                   asp-action="Edit"
+                   asp-route-id="@Model.Id"
+                   class="btn btn-warning btn-sm flex-fill">
+                    Edit
+                </a>
+
+                <a asp-controller="CPU"
+                   asp-action="Delete"
+                   asp-route-id="@Model.Id"
+                   class="btn btn-danger btn-sm flex-fill">
+                    Delete
+                </a>
+            </div>
         </div>
     </div>
 </div>

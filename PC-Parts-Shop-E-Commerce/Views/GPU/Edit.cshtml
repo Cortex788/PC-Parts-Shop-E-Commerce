@@ -1,0 +1,15 @@
+﻿<div>
+    <div class="mx-2">
+        <h2>Edit GPU</h2>
+    </div>
+    <div class="container my-6"></div>
+    <form asp-controller="GPU" asp-action="Edit" method="post">
+        <partial name="_AddEditGpuPartial"></partial>
+
+        
+            <div class="col-12 m-3">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-action="GPU" asp-controller="Product" class="btn btn-secondary ms-2">Cancel</a>
+            </div>
+        </form>
+    </div>

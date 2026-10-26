@@ -1,0 +1,97 @@
+﻿@using PC_Parts_Shop_E_Commerce.ViewModels
+@model AddEditCpuViewModel
+
+
+<div class="container my-6">
+    <input type="hidden" asp-for="ProductId" />
+        @Html.AntiForgeryToken()
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label asp-for="ProductName" class="form-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="BrandId" class="form-label">Brand</label>
+                <select asp-for="BrandId" class="form-select" asp-items="Model.Brands">
+                    <option value="">-- Select brand --</option>
+                </select>
+                <span asp-validation-for="BrandId" class="text-danger"></span>
+            </div>
+
+            <div class="col-12">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="Price" class="form-label"></label>
+                <input asp-for="Price" class="form-control" />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="StockQuantity" class="form-label"></label>
+                <input asp-for="StockQuantity" class="form-control" />
+                <span asp-validation-for="StockQuantity" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="ImageURL" class="form-label">Image URL</label>
+                <input asp-for="ImageURL" class="form-control" />
+                <span asp-validation-for="ImageURL" class="text-danger"></span>
+            </div>
+
+            <hr />
+
+            <div class="col-md-6">
+                <label asp-for="Name" class="form-label">CPU Name</label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-3">
+                <label asp-for="Cores" class="form-label"></label>
+                <input asp-for="Cores" class="form-control" />
+                <span asp-validation-for="Cores" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-3">
+                <label asp-for="Threads" class="form-label"></label>
+                <input asp-for="Threads" class="form-control" />
+                <span asp-validation-for="Threads" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-3">
+                <label asp-for="BaseClock" class="form-label"></label>
+                <input asp-for="BaseClock" class="form-control" />
+                <span asp-validation-for="BaseClock" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-3">
+                <label asp-for="BoostClock" class="form-label"></label>
+                <input asp-for="BoostClock" class="form-control" />
+                <span asp-validation-for="BoostClock" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="SocketType" class="form-label"></label>
+                <input asp-for="SocketType" class="form-control" />
+                <span asp-validation-for="SocketType" class="text-danger"></span>
+            </div>
+
+            <div class="col-md-6">
+                <label asp-for="IntegratedGraphics" class="form-label">Integrated Graphics (optional)</label>
+                <input asp-for="IntegratedGraphics" class="form-control" />
+                <span asp-validation-for="IntegratedGraphics" class="text-danger"></span>
+            </div>
+            
+        </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

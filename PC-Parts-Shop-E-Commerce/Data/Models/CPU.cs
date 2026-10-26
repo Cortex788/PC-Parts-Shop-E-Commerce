@@ -15,16 +15,16 @@ namespace PC_Parts_Shop_E_Commerce.Data.Models
         [MaxLength(CPUNameMaxLength)]
         public string Name { get; set; } = null!;
 
-        [Range(1,256)]
+        [Range(CPUCoresMinCount, CPUCoresMaxCount)]
         public int Cores { get; set; }
 
-        [Range(1, 512)]
+        [Range(CPUThreadsMinCount, CPUThreadsMaxCount)]
         public int Threads { get; set; }
 
-        [Range(1, 10000)]
+        [Range(CPUBaseClockMinValue, CPUBaseClockMaxValue)]
         public int BaseClock { get; set; }
 
-        [Range(1, 10000)]
+        [Range(CPUBoostClockMinValue, CPUBoostClockMaxValue)]
         public int BoostClock { get; set; }
 
         public string? IntegratedGraphics { get; set; }

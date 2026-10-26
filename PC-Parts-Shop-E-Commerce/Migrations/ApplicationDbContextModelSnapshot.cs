@@ -190,8 +190,8 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
 
                     b.Property<string>("Chipset")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("Cores")
                         .HasColumnType("int");
@@ -372,7 +372,7 @@ namespace PC_Parts_Shop_E_Commerce.Migrations
                             BrandId = 1,
                             CategoryId = 1,
                             Description = "High-end desktop CPU from Intel for enthusiast gaming and content creation.",
-                            ImageURL = "/images/products/i9-13900k.jpg",
+                            ImageURL = "https://img-cdn.heureka.group/v1/3a01e256-9993-48bb-b658-79cc53f92cec/intel-core-i9-13900k-24-core-4-3ghz-lga1700-box-bx8071513900k.jpg",
                             Price = 589.99m,
                             ProductName = "Intel Core i9-13900K",
                             StockQuantity = 10

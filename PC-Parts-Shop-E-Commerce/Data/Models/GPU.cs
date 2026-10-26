@@ -11,24 +11,24 @@ namespace PC_Parts_Shop_E_Commerce.Data.Models
         public int ProductId { get; set; }
 
         [Required]
-        [MinLength(GPUNameMinLength)]
-        [MaxLength(GPUNameMaxLength)]
+        [MinLength(GPUChipsetMinLength)]
+        [MaxLength(GPUChipsetMaxLength)]
         public string Chipset { get; set; } = null!;
 
-        [Range(0, 128)]
+        [Range(GPUVRAMMinValue, GPUVRAMMaxValue)]
         public int VRAM { get; set; }
 
         [Required]
         public string MemoryType { get; set; } = null!;
 
-        [Range(0, int.MaxValue)]
+        [Range(GPUMemoryClockMinValue, GPUMemoryClockMaxValue)]
         public int MemoryClock { get; set; }
 
         [Required]
-        [Range(0, 1000)]
+        [Range(GPULengthMinValue, GPULengthMaxValue)]
         public string Length { get; set; } = null!;
 
-        [Range(0, int.MaxValue)]
+        [Range(GPUCoresMinValue, GPUCoresMaxValue)]
         public int Cores { get; set; }
 
         public virtual Product? Product { get; set; }
