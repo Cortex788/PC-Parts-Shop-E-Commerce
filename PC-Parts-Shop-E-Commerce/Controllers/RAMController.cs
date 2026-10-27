@@ -133,5 +133,17 @@ namespace PC_Parts_Shop_E_Commerce.Controllers
             return RedirectToAction("Index", "Home");
         }
 
+        public async Task<IActionResult> Delete(int id)
+        {
+            var ram = await dbContext.RAMs.Include(r => r.Product).FirstOrDefaultAsync(r => r.ProductId == id);
+            if (ram == null)
+            {
+                return NotFound();
+            }
+            dbContext.Products.Remove(ram.Product);
+            await dbContext.SaveChangesAsync();
+            return RedirectToAction("Index", "Home");
+        }
+
     }
 }
