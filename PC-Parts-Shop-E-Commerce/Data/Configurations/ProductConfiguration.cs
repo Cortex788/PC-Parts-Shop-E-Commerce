@@ -18,7 +18,7 @@ namespace PC_Parts_Shop_E_Commerce.Data.Configurations
                     StockQuantity = 10,
                     BrandId = 1,
                     CategoryId = 1,
-                    ImageURL = "/images/products/i9-13900k.jpg"
+                    ImageURL = "https://img-cdn.heureka.group/v1/3a01e256-9993-48bb-b658-79cc53f92cec/intel-core-i9-13900k-24-core-4-3ghz-lga1700-box-bx8071513900k.jpg"
                 },
                 new Product
                 {

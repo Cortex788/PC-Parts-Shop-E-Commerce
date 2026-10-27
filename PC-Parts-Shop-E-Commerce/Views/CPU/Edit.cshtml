@@ -1,0 +1,14 @@
+﻿<div>
+    <div class="mx-2">
+        <h2>Edit CPU</h2>
+    </div>
+    <form asp-controller="CPU" asp-action="Edit" asp-route-id="@Model.ProductId" method="post">
+        <partial name="_AddEditCpuPartial"></partial>
+
+            <div class="col-12 m-3">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <a asp-action="CPU" asp-controller="Product" class="btn btn-secondary ms-2">Cancel</a>
+            </div>
+
+    </form>
+</div>

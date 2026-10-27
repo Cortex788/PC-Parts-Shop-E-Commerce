@@ -9,12 +9,22 @@
         </aside>
 
 
+
         <section class="col-12 col-md-9 col-lg-10">
+
+            <div class="mb-3">
+                <a asp-controller="GPU"
+                   asp-action="Add"
+                   class="btn btn-primary btn-sm flex-fill">
+                    Add
+                </a>
+            </div>
+
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-3">
-                @foreach (var cpu in Model)
+                @foreach (var gpu in Model)
                 {
                     <div class="col">
-                        <partial name="_GpuCardPartial" model="cpu" />
+                        <partial name="_GpuCardPartial" model="gpu" />
                     </div>
                 }
             </div>

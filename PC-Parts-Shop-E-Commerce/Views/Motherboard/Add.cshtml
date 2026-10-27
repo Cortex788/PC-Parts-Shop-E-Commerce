@@ -1,0 +1,15 @@
+﻿<div>
+    <div class="mx-2">
+        <h2>Add Motherboard</h2>
+    </div>
+    <div class="container my-6"></div>
+    <form asp-controller="Motherboard" asp-action="Add" method="post">
+        <partial name="_AddEditMotherboardPartial"></partial>
+
+        
+            <div class="col-12 m-3">
+                <button type="submit" class="btn btn-primary">Add</button>
+                <a asp-action="Motherboard" asp-controller="Product" class="btn btn-secondary ms-2">Cancel</a>
+            </div>
+        </form>
+    </div>

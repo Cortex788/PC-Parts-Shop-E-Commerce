@@ -1,0 +1,91 @@
+﻿@using PC_Parts_Shop_E_Commerce.ViewModels
+@model AddEditGpuViewModel
+
+<div class="container my-6">
+    <input type="hidden" asp-for="ProductId" />
+    @Html.AntiForgeryToken()
+
+    <div class="row g-3">
+
+        <div class="col-md-6">
+            <label asp-for="ProductName" class="form-label"></label>
+            <input asp-for="ProductName" class="form-control" />
+            <span asp-validation-for="ProductName" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="BrandId" class="form-label">Brand</label>
+            <select asp-for="BrandId"
+                    class="form-select"
+                    asp-items="Model.Brands">
+                <option value="">-- Select brand --</option>
+            </select>
+            <span asp-validation-for="BrandId" class="text-danger"></span>
+        </div>
+
+        <div class="col-12">
+            <label asp-for="Description" class="form-label"></label>
+            <textarea asp-for="Description"
+                      class="form-control"
+                      rows="4"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Price" class="form-label"></label>
+            <input asp-for="Price" class="form-control" />
+            <span asp-validation-for="Price" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="StockQuantity" class="form-label"></label>
+            <input asp-for="StockQuantity" class="form-control" />
+            <span asp-validation-for="StockQuantity" class="text-danger"></span>
+        </div>
+
+        <div class="col-12">
+            <label asp-for="ImageURL" class="form-label">Image URL</label>
+            <input asp-for="ImageURL" class="form-control" />
+            <span asp-validation-for="ImageURL" class="text-danger"></span>
+        </div>
+
+        <hr />
+
+        <div class="col-md-6">
+            <label asp-for="Chipset" class="form-label"></label>
+            <input asp-for="Chipset" class="form-control" />
+            <span asp-validation-for="Chipset" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="VRAM" class="form-label"></label>
+            <input asp-for="VRAM" class="form-control" />
+            <span asp-validation-for="VRAM" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="MemoryType" class="form-label"></label>
+            <input asp-for="MemoryType" class="form-control" />
+            <span asp-validation-for="MemoryType" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="MemoryClock" class="form-label"></label>
+            <input asp-for="MemoryClock" class="form-control" />
+            <span asp-validation-for="MemoryClock" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Length" class="form-label">Length (mm)</label>
+            <input asp-for="Length" class="form-control" />
+            <span asp-validation-for="Length" class="text-danger"></span>
+        </div>
+
+        <div class="col-md-6">
+            <label asp-for="Cores" class="form-label"></label>
+            <input asp-for="Cores" class="form-control" />
+            <span asp-validation-for="Cores" class="text-danger"></span>
+        </div>
+
+    </div>
+</div>
