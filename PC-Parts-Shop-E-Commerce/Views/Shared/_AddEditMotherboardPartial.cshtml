@@ -1,0 +1,89 @@
+﻿@using PC_Parts_Shop_E_Commerce.ViewModels
+@using PC_Parts_Shop_E_Commerce.Data.Enums
+@model AddEditMotherboardViewModel
+
+<input type="hidden" asp-for="ProductId" />
+@Html.AntiForgeryToken();
+
+<div class="mb-3">
+    <label asp-for="ProductName" class="form-label"></label>
+    <input asp-for="ProductName" class="form-control" />
+    <span asp-validation-for="ProductName" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="BrandId" class="form-label">Brand</label>
+    <select asp-for="BrandId"
+            asp-items="Model.Brands"
+            class="form-select">
+        <option value="">-- Select Brand --</option>
+    </select>
+    <span asp-validation-for="BrandId" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" class="form-control"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Price" class="form-label"></label>
+    <input asp-for="Price" class="form-control" />
+    <span asp-validation-for="Price" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="StockQuantity" class="form-label"></label>
+    <input asp-for="StockQuantity" class="form-control" />
+    <span asp-validation-for="StockQuantity" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="ImageURL" class="form-label">Image URL</label>
+    <input asp-for="ImageURL" class="form-control" />
+    <span asp-validation-for="ImageURL" class="text-danger"></span>
+</div>
+
+<hr />
+
+<h5>Motherboard Specifications</h5>
+
+<div class="mb-3">
+    <label asp-for="Chipset" class="form-label"></label>
+    <input asp-for="Chipset" class="form-control" />
+    <span asp-validation-for="Chipset" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="FormFactor" class="form-label"></label>
+    <select asp-for="FormFactor"
+            asp-items="Html.GetEnumSelectList<FormFactor>()"
+            class="form-select">
+        <option value="">-- Select Form Factor --</option>
+    </select>
+    <span asp-validation-for="FormFactor" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="Socket" class="form-label"></label>
+    <input asp-for="Socket" class="form-control" />
+    <span asp-validation-for="Socket" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="MemoryType" class="form-label"></label>
+    <select asp-for="MemoryType"
+            asp-items="Html.GetEnumSelectList<MemoryType>()"
+            class="form-select">
+    </select>
+    <span asp-validation-for="MemoryType" class="text-danger"></span>
+</div>
+
+<div class="mb-3">
+    <label asp-for="MemorySlots" class="form-label">Memory Slots</label>
+    <input asp-for="MemorySlots" class="form-control" />
+    <span asp-validation-for="MemorySlots" class="text-danger"></span>
+</div>
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>

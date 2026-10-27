@@ -34,8 +34,6 @@ namespace PC_Parts_Shop_E_Commerce.Data.Models
         [Range(MotherboardMemorySlotsMinValue, MotherboardMemorySlotsMaxValue)]
         public int MemorySlots { get; set; }
 
-
-
         public virtual Product? Product { get; set; }
     }
 }
